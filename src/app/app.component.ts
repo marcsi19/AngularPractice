@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { HelloComponent } from "./hello/hello.component";
+
 // function log(target, name, descriptor) { //MEMBER DECORATOR
 //   console.log(target, name, descriptor);
 //   const original = descriptor.value;
@@ -13,14 +13,14 @@ import { HelloComponent } from "./hello/hello.component";
 //   return descriptor;
 // }
 
-function log(className) {
-  // CLASS DECORATOR
-  console.log(className);
-  return (...args) => {
-    console.log("arguments passed to thei class's contructor are ", args);
-    return new className(...args);
-  };
-}
+// function log(className) {
+//   // CLASS DECORATOR
+//   console.log(className);
+//   return (...args) => {
+//     console.log("arguments passed to thei class's contructor are ", args);
+//     return new className(...args);
+//   };
+// }
 // @log // CLASS DECORATOR
 // class myExampleClass {
 //   constructor(arg1, arg2) {
@@ -36,6 +36,11 @@ function log(className) {
 })
 export class AppComponent {
   title = "intro2angular";
+  text = "app";
+  // updateValue(e) {
+  //   this.text = e.target.value;
+  //   console.log(e.target.value);
+  // }
 
   // constructor() {
   //   console.log(
