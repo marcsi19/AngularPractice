@@ -1,20 +1,30 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>Welcome to <app-hello></app-hello></h1>
-  <!-- <input type="text" [value]="text" (input)="updateValue($event)" /> -->
-  <input type="text" [(ngModel)]="text" />
-  {{ text }}
+  <table>
+    <tr>
+      <td>S No.</td>
+      <td>Name</td>
+      <td>Is Online?</td>
+    </tr>
+    <tr
+      *ngFor="
+        let record of records;
+        let myIndex = index;
+        let firstRecord = first;
+        let lastRecord = last;
+        let evenRecord = even;
+        let oddRecord = odd
+      "
+      [ngClass]="{
+        odd: oddRecord,
+        even: evenRecord,
+        first: firstRecord,
+        last: lastRecord
+      }"
+    >
+      <td>{{ myIndex + 1 }}</td>
+      <td>{{ record.name }}</td>
+      <td>{{ record.online }}</td>
+    </tr>
+  </table>
 </div>
-
-<!-- <h2>Here are some links to help you start:</h2> -->
-<!-- <ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul> -->
